@@ -1,7 +1,6 @@
-# README
+# AtCoder GitCommit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This program is auto committer of my submits of AtCoder.
 
 Things you may want to cover:
 

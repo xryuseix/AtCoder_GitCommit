@@ -10,11 +10,9 @@ class FetchController < ApplicationController
     # === データを加工 ===
     submit.sort! { |a, b| b['epoch_second'] <=> a['epoch_second'] }
 
-    p submit[0]
-    p submit[1]
-    p submit[2]
-    p submit[3]
-
+    # === 昨日の提出コードを取得 ===
+    lastday_submits = lastday_submit_array(time, submit)
+    
   end
 
   def GetJsonAPI(urlstring)
@@ -43,4 +41,27 @@ class FetchController < ApplicationController
     return GetJsonAPI("https://kenkoooo.com/atcoder/resources/problems.json")
   end
 
+  def time
+    now_unixtime = Time.new.to_i
+    lastday_unixtime = now_unixtime - 60*60*24
+    lastday = Time.at(lastday_unixtime)
+    return lastday
+  end
+
+  def lastday_submit_array(lastday, submit)
+    lastday_submits = []
+
+    submit.each do |sub|
+      submitday = Time.at(sub['epoch_second'])
+
+      # 昨日の提出をlastday_submitsに格納
+      if lastday.day == submitday.day && lastday.month == submitday.month && lastday.year == submitday.year
+        lastday_submits << sub
+      elsif lastday.day > submitday.day
+        # submitはソートしているのでdayが小さい値がくればbreak
+        break
+      end
+    end
+    return lastday_submits
+  end
 end

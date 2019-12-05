@@ -1,15 +1,16 @@
 class FetchController < ApplicationController
   def index
-    puts("hello")
-    atcoder
-  end
-  def atcoder
     require 'net/http'
     require 'json'
 
-    # urlをパース
-    url = URI.parse("https://kenkoooo.com/atcoder/atcoder-api/results?user=wata")
+    submit = usersubmit
+    contest = contestinfo
     
+  end
+
+  def GetJsonAPI(urlstring)
+    # urlをパース
+    url = URI.parse(urlstring)
     # httpの通信を設定
     https = Net::HTTP.new(url.host, url.port)
     https.use_ssl = true
@@ -21,6 +22,16 @@ class FetchController < ApplicationController
     # データ変換
     hash = JSON.parse(res.body)
     
-    puts hash
+    return hash
   end
+
+  def usersubmit
+    username = "xryuseix"
+    return GetJsonAPI("https://kenkoooo.com/atcoder/atcoder-api/results?user=" + username)
+  end
+
+  def contestinfo
+    return GetJsonAPI("https://kenkoooo.com/atcoder/resources/problems.json")
+  end
+
 end

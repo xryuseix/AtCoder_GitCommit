@@ -2,18 +2,20 @@ class FetchController < ApplicationController
   def index
     
     # === データを取得 ===
-    # submit = usersubmit
+    submit = usersubmit
     # contest = contestinfo
     
     # === データを加工 ===
-    # submit.sort! { |a, b| b['epoch_second'] <=> a['epoch_second'] }
+    submit.sort! { |a, b| b['epoch_second'] <=> a['epoch_second'] }
 
     # === 前日の提出コードを取得 ===
-    # lastday_submits = lastday_submit_array(time, submit)
-
-    # p lastday_submits
-
-    code = fetch_source_code
+    source_codes = []
+    lastday_submits = lastday_submit_array(time, submit)
+  
+    lastday_submits.each do |problemnum|
+      url = "https://atcoder.jp/contests/#{problemnum['contest_id']}/submissions/#{problemnum['id']}"
+      source_codes << fetch_source_code(url)
+    end
     
   end
 
@@ -77,12 +79,11 @@ class FetchController < ApplicationController
     return lastday_submits
   end
 
-  def fetch_source_code
+  def fetch_source_code(url)
     # === 提出したソースコードを取得 ===
     agent = Mechanize.new
-    url = "https://atcoder.jp/contests/apc001/submissions/8795247"
     page = agent.get(url)
-    p page.body
+    code = page.xpath('//*[@id="submission-code"]').text.gsub(/&gt/, ">").gsub(/&lt/, "<")
   end
 
 end

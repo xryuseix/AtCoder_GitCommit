@@ -1,21 +1,27 @@
 class FetchController < ApplicationController
   def index
-    require 'net/http'
-    require 'json'
     
     # === データを取得 ===
-    submit = usersubmit
-    contest = contestinfo
+    # submit = usersubmit
+    # contest = contestinfo
     
     # === データを加工 ===
-    submit.sort! { |a, b| b['epoch_second'] <=> a['epoch_second'] }
+    # submit.sort! { |a, b| b['epoch_second'] <=> a['epoch_second'] }
 
-    # === 昨日の提出コードを取得 ===
-    lastday_submits = lastday_submit_array(time, submit)
+    # === 前日の提出コードを取得 ===
+    # lastday_submits = lastday_submit_array(time, submit)
+
+    # p lastday_submits
+
+    code = fetch_source_code
     
   end
 
   def GetJsonAPI(urlstring)
+    require 'net/http'
+    require 'json'
+    # === APIからJsonデータを取得 ===
+
     # urlをパース
     url = URI.parse(urlstring)
     # httpの通信を設定
@@ -33,15 +39,18 @@ class FetchController < ApplicationController
   end
 
   def usersubmit
+    # === 特定のuserのデータを取得 ===
     username = "xryuseix"
     return GetJsonAPI("https://kenkoooo.com/atcoder/atcoder-api/results?user=" + username)
   end
 
   def contestinfo
+    # === コンテストの情報を所得 ===
     return GetJsonAPI("https://kenkoooo.com/atcoder/resources/problems.json")
   end
 
   def time
+    # === 昨日の日付を取得 ===
     now_unixtime = Time.new.to_i
     lastday_unixtime = now_unixtime - 60*60*24
     lastday = Time.at(lastday_unixtime)
@@ -49,6 +58,7 @@ class FetchController < ApplicationController
   end
 
   def lastday_submit_array(lastday, submit)
+    # === 前日の提出状況を配列で返す ===
     lastday_submits = []
 
     submit.each do |sub|
@@ -56,7 +66,9 @@ class FetchController < ApplicationController
 
       # 昨日の提出をlastday_submitsに格納
       if lastday.day == submitday.day && lastday.month == submitday.month && lastday.year == submitday.year
-        lastday_submits << sub
+        if sub['result'] == "AC"
+          lastday_submits << sub
+        end
       elsif lastday.day > submitday.day
         # submitはソートしているのでdayが小さい値がくればbreak
         break
@@ -64,4 +76,13 @@ class FetchController < ApplicationController
     end
     return lastday_submits
   end
+
+  def fetch_source_code
+    # === 提出したソースコードを取得 ===
+    agent = Mechanize.new
+    url = "https://atcoder.jp/contests/apc001/submissions/8795247"
+    page = agent.get(url)
+    p page.body
+  end
+
 end

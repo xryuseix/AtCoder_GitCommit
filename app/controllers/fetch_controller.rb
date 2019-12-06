@@ -9,14 +9,24 @@ class FetchController < ApplicationController
     submit.sort! { |a, b| b['epoch_second'] <=> a['epoch_second'] }
 
     # === 前日の提出コードを取得 ===
-    source_codes = []
-    lastday_submits = lastday_submit_array(time, submit)
+    # source_codes = []
+    # lastday_submits = lastday_submit_array(time, submit)
   
-    lastday_submits.each do |problemnum|
-      url = "https://atcoder.jp/contests/#{problemnum['contest_id']}/submissions/#{problemnum['id']}"
-      source_codes << fetch_source_code(url)
-    end
+    # lastday_submits.each do |problemnum|
+    #   url = "https://atcoder.jp/contests/#{problemnum['contest_id']}/submissions/#{problemnum['id']}"
+    #   source_codes << fetch_source_code(url)
+    # end
+
+    # === 問題文を取得 ===
+    problem_statement = []
     
+    # lastday_submits.each do |problemnum|
+    #   url = "https://atcoder.jp/contests/#{problemnum['contest_id']}/submissions/#{problemnum['id']}"
+    #   source_codes << fetch_source_code(url)
+    # end
+    url = "https://atcoder.jp/contests/apc001/tasks/apc001_b"
+    fetch_problem_statement(url)
+
   end
 
   def GetJsonAPI(urlstring)
@@ -84,6 +94,18 @@ class FetchController < ApplicationController
     agent = Mechanize.new
     page = agent.get(url)
     code = page.xpath('//*[@id="submission-code"]').text.gsub(/&gt/, ">").gsub(/&lt/, "<")
+  end
+
+  def fetch_problem_statement(url)
+    # === 問題文を取得 ===
+    agent = Mechanize.new
+    page = agent.get(url)
+    
+    # 整形
+    statement = page.xpath('//*[@id="main-container"]/div[1]/div[2]').text.gsub(/\n/, "").gsub(/\r/, "").gsub(/\t/, "").gsub(/入力例.+/, "")
+
+    statement = statement.gsub(/Time Limit/, "\nTime Limit ").gsub(/Memory Limit/, "Memory Limit ").gsub(/配点/, "\n配点").gsub(/問題文/, "\n問題文 : ").gsub(/制約/, "\n制約")
+    return statement
   end
 
 end

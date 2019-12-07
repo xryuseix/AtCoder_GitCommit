@@ -3,7 +3,6 @@ class FetchController < ApplicationController
     
     # === データを取得 ===
     submit = usersubmit
-    # contest = contestinfo
     
     # === データを加工 ===
     submit.sort! { |a, b| b['epoch_second'] <=> a['epoch_second'] }
@@ -56,11 +55,6 @@ class FetchController < ApplicationController
     username = "xryuseix"
     return GetJsonAPI("https://kenkoooo.com/atcoder/atcoder-api/results?user=" + username)
   end
-
-  # def contestinfo
-  #   # === コンテストの情報を所得 ===
-  #   return GetJsonAPI("https://kenkoooo.com/atcoder/resources/problems.json")
-  # end
 
   def time
     # === 昨日の日付を取得 ===

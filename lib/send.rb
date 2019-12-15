@@ -14,20 +14,37 @@ class Send
     # git init;
     # git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup';
     system("cd storage;git init")
-    system("cd storage;
-      echo 'CCCCC\n';
-      ls -a;
-      echo 'AAAAA\n';
-      git pull origin master;
-      echo 'BBBBB\n';
-      ls -a;
-      echo 'GGGGG\n';
-      git add --all;
-      echo 'HHHHH\n';
-      git commit -m '#{time.year}/#{time.month}/#{time.day}';
-      echo 'IIIII\n';
-      git push -u origin master;
-      echo 'JJJJJ\n';")
+    system("cd storage;ls -a")
+    system("cd storage;echo 'AAAAA\n'")
+
+    system("cd storage;git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup'")
+    system("cd storage;echo 'BBBBB\n'")
+
+    system("cd storage;git config --global user.email 'ryusei143.shootingstar@gmail.com'")
+    system("cd storage;git config --global user.name 'xryuseix'")
+    system("cd storage;echo 'CCCCC\n'")
+
+    system("cd storage;git pull origin master;")
+    system("cd storage;echo 'DDDDD\n'")
+   
+    system("cd storage;git add --all")
+    system("cd storage;echo 'EEEEE\n'")
+
+    system("cd storage;git commit -m '#{time.year}/#{time.month}/#{time.day}'")
+    system("cd storage;echo 'FFFFF\n'")
+
+    system("cd storage;git push -u origin master")
+    system("cd storage;echo 'GGGGG\n'")
+
+    
+    
+    # system("
+    #   git add --all;
+    #   echo 'HHHHH\n';
+    #   git commit -m '#{time.year}/#{time.month}/#{time.day}';
+    #   echo 'IIIII\n';
+    #   git push -u origin master;
+    #   echo 'JJJJJ\n';")
     
   end
 

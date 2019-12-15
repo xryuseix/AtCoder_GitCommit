@@ -13,6 +13,7 @@ class Send
     # git config --global user.name 'xryuseix';
     # git init;
     # git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup';
+    system("cd storage;git init")
     system("cd storage;
       echo 'CCCCC\n';
       ls -a;

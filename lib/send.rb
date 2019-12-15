@@ -10,15 +10,25 @@ class Send
     # system("cd storage; git add --all; git commit -m 'remove test script'; git push -u origin master")
 
     system("cd storage;
+      echo 'AAAAA\n';
       git config --global user.email 'ryusei143.shootingstar@gmail.com';
+      echo 'BBBBB\n';
       git config --global user.name 'xryuseix';
+      echo 'CCCCC\n';
       git init;
+      echo 'DDDDD\n';
       git clone 'https://github.com/xryuseix/Competitive_Programming_Buckup';
+      echo 'EEEEE\n';
       git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup';
+      echo 'FFFFF\n';
       git pull origin master;
+      echo 'GGGGG\n';
       git add --all;
+      echo 'HHHHH\n';
       git commit -m '#{time.year}/#{time.month}/#{time.day}';
-      git push -u origin master")
+      echo 'IIIII\n';
+      git push -u origin master;
+      echo 'JJJJJ\n';")
     
   end
 

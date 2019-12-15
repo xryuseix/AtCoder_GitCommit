@@ -9,7 +9,7 @@ class Send
     # system("cd storage; git rm -rf AtCoder/* ;")
     # system("cd storage; git add --all; git commit -m 'remove test script'; git push -u origin master")
 
-    system("cd storage;git init;git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup'; git add --all; git commit -m '#{time.year}/#{time.month}/#{time.day}'; git push -u origin master")
+    system("cd storage;git config --global user.name 'xryuseix';git init;git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup'; git add --all; git commit -m '#{time.year}/#{time.month}/#{time.day}'; git push -u origin master")
 
   end
 

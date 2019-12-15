@@ -9,18 +9,16 @@ class Send
     # system("cd storage; git rm -rf AtCoder/* ;")
     # system("cd storage; git add --all; git commit -m 'remove test script'; git push -u origin master")
 
+    # git config --global user.email 'ryusei143.shootingstar@gmail.com';
+    # git config --global user.name 'xryuseix';
+    # git init;
+    # git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup';
     system("cd storage;
-      echo 'AAAAA\n';
-      git config --global user.email 'ryusei143.shootingstar@gmail.com';
-      echo 'BBBBB\n';
-      git config --global user.name 'xryuseix';
       echo 'CCCCC\n';
-      git init;
-      echo 'EEEEE\n';
-      git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup';
-      echo 'FFFFF\n';
+      ls -a;
+      echo 'AAAAA\n';
       git pull origin master;
-      echo 'DDDDD\n';
+      echo 'BBBBB\n';
       ls -a;
       echo 'GGGGG\n';
       git add --all;

@@ -16,12 +16,12 @@ class Send
       git config --global user.name 'xryuseix';
       echo 'CCCCC\n';
       git init;
-      echo 'DDDDD\n';
-      git clone 'https://github.com/xryuseix/Competitive_Programming_Buckup';
       echo 'EEEEE\n';
       git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup';
       echo 'FFFFF\n';
       git pull origin master;
+      echo 'DDDDD\n';
+      ls -a;
       echo 'GGGGG\n';
       git add --all;
       echo 'HHHHH\n';

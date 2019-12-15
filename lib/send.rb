@@ -30,7 +30,7 @@ class Send
     system("cd storage;git add --all")
     system("cd storage;echo 'EEEEE\n'")
 
-    system("cd storage;git commit -m '#{time.year}/#{time.month}/#{time.day}'")
+    system("cd storage;git commit -m '#{lastday.year}/#{lastday.month}/#{lastday.day}'")
     system("cd storage;echo 'FFFFF\n'")
 
     # system("cd storage;git push -u origin master")

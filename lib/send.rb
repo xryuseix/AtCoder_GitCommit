@@ -1,4 +1,4 @@
-class Tasks::Send
+class Send
   def self.index
     lastday = time
 

@@ -106,7 +106,10 @@ class Fetch
     # === データ(問題文・ソースコード)を書き込み ===
 
       # 書き込み先ディレクトリがなかったら作る
-    lastday_submits.length.times do |i|
+      lastday_submits.length.times do |i|
+      if not is_exist_directory("#{Dir.pwd}/storage/", "#{Dir.pwd}/storage/AtCoder/")
+        Dir.mkdir("#{Dir.pwd}/storage/AtCoder")
+      end
       if not is_exist_directory("#{Dir.pwd}/storage/AtCoder/", "#{Dir.pwd}/storage/AtCoder/#{lastday_submits[i]['contest_id']}/")
         Dir.mkdir("#{Dir.pwd}/storage/AtCoder/#{lastday_submits[i]['contest_id']}")
       end

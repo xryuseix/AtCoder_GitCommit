@@ -17,7 +17,7 @@ class Send
     system("cd storage;ls -a")
     system("cd storage;echo 'AAAAA\n'")
 
-    system("cd storage;git remote add origin 'https://github.com/xryuseix/Competitive_Programming_Buckup'")
+    system("cd storage;git remote add origin 'https://github.com/xryuseix/AtCoder_Buckup'")
     system("cd storage;echo 'BBBBB\n'")
 
     system("cd storage;git config --global user.email 'ryusei143.shootingstar@gmail.com'")

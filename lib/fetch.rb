@@ -99,6 +99,7 @@ class Fetch
     statement = page.xpath('//*[@id="main-container"]/div[1]/div[2]').text.gsub(/\n/, "").gsub(/\r/, "").gsub(/\t/, "").gsub(/入力例.+/, "")
 
     statement = statement.gsub(/Time Limit/, "\nTime Limit ").gsub(/Memory Limit/, "Memory Limit ").gsub(/配点/, "\n配点").gsub(/問題文/, "\n問題文 : ").gsub(/制約/, "\n制約")
+    statement += rand(100000).to_s
     return statement
   end
 

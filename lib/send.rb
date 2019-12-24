@@ -10,10 +10,10 @@ class Send
     # system("cd storage;echo 'BBBBB\n'")
 
     # system("cd storage;git config --global user.email 'ryusei143.shootingstar@gmail.com'")
-    # system("cd storage;git config --global user.name 'xryuseix'")
+    system("cd storage;git config --global user.name 'xryuseix'")
     # system("cd storage;echo 'CCCCC\n'")
 
-    system("cd storage;git pull origin master;")
+    system("cd storage;git pull origin master")
     # system("cd storage;echo 'DDDDD\n'")
    
     system("cd storage;git add --all")

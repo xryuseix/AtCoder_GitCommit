@@ -10,7 +10,7 @@ class Send
     # system("cd storage;echo 'BBBBB\n'")
 
     domain = '@gmail.com'
-    system("cd storage;git config --global user.email 'ryusei143.shootingstar#{domain}m'")
+    system("cd storage;git config --global user.email 'ryusei143.shootingstar#{domain}'")
     system("cd storage;git config --global user.name 'xryuseix'")
     # system("cd storage;echo 'CCCCC\n'")
 

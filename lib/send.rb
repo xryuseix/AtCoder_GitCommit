@@ -23,7 +23,7 @@ class Send
     system("cd storage;git commit -m '#{lastday.year}/#{lastday.month}/#{lastday.day} #{rand(100000)}'")
     # system("cd storage;echo 'FFFFF\n'")
 
-    system("cd storage;git push origin master")
+    system("cd storage;git push -f origin master")
     # system("cd storage;echo 'GGGGG\n'")
     
   end

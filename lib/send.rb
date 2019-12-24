@@ -24,7 +24,7 @@ class Send
     system("cd storage;git config --global user.name 'xryuseix'")
     system("cd storage;echo 'CCCCC\n'")
 
-    # system("cd storage;git pull origin master;")
+    system("cd storage;git pull origin master;")
     system("cd storage;echo 'DDDDD\n'")
    
     system("cd storage;git add --all")

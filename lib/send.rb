@@ -5,8 +5,8 @@ class Send
     system("cd storage;git init")
     system("cd storage;ls -a")
     # system("cd storage;echo 'AAAAA\n'")
-
-    system("cd storage;git remote add origin 'https://#{$1}:#{$2}@github.com/xryuseix/AtCoder_Backup'")
+p ARGV[0]
+    system("cd storage;git remote add origin 'https://#{ARGV[0]}:#{ARGV[1]}@github.com/xryuseix/AtCoder_Backup'")
     # system("cd storage;echo 'BBBBB\n'")
 
     domain = '@gmail.com'

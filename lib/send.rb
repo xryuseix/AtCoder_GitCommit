@@ -5,7 +5,6 @@ class Send
 
     system("cd storage;git init")
     # system("cd storage;ls -a")
-
     system("cd storage;git remote add origin 'https://github.com/xryuseix/AtCoder_Backup'")
     
     # system("cd storage;echo 'git remote -v\n'")
@@ -14,11 +13,9 @@ class Send
     system("cd storage;git config --global user.email 'ryusei143.shootingstar#{domain}'")
     system("cd storage;git config --global user.name 'xryuseix'")
 
-
     system("cd storage;git pull origin master")
    
     system("cd storage;git add --all")
-
     system("cd storage;git commit -m 'submit of #{lastday.year}/#{lastday.month}/#{lastday.day} rand=#{rand(100000)}'")
     cmd = 'cd storage;git push origin master'
     exec_as_root(cmd)

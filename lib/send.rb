@@ -8,8 +8,8 @@ class Send
     system("cd storage;ls -a")
     # system("cd storage;echo 'AAAAA\n'")
 
-    # system("cd storage;git remote add origin 'https://github.com/xryuseix/AtCoder_Backup'")
-    system("cd storage;git remote set-url origin 'git@github.com:xryuseix/AtCoder_Backup.git'")
+    system("cd storage;git remote add origin 'https://github.com/xryuseix/AtCoder_Backup'")
+    # system("cd storage;git remote set-url origin 'git@github.com:xryuseix/AtCoder_Backup.git'")
     
     system("cd storage;echo 'git remote -v\n'")
 
@@ -30,17 +30,17 @@ class Send
     system("cd storage;git push origin master")
 
     cmd = 'git push origin master'
-    PTY.getpty(cmd) do | i,o |
-        o.sync = true
-        i.expect(/password:/,10){|line| ##入力プロンプトくるまでreadline繰り返す
-            puts line
-            o.puts ENV['Git_PW']
-            o.flush
-        }
-        while( i.eof? == false )
-            puts i.gets
-        end
-    end
+    # PTY.getpty(cmd) do | i,o |
+    #     o.sync = true
+    #     i.expect(/password:/,10){|line| ##入力プロンプトくるまでreadline繰り返す
+    #         puts line
+    #         o.puts ENV['Git_PW']
+    #         o.flush
+    #     }
+    #     while( i.eof? == false )
+    #         puts i.gets
+    #     end
+    # end
     # system("cd storage;echo 'GGGGG\n'")
     
   end

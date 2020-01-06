@@ -24,7 +24,9 @@ def exec_as_root( cmd )
     r.expect( /Password for 'https:\/\/xryuseix@github\.com': $/ ) {
       w.puts ENV['Git_PW']
       sleep 2
-      return
     }
+    # while( r.eof? == false )
+    #   puts r.gets
+    # end
   }
 end

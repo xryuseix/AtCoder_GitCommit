@@ -32,7 +32,7 @@ class Send
     cmd = 'cd storage;git push origin master'
     exec_as_root(cmd)
 
-    system("cd storage;echo 'GGGGG\n'")
+    
     
   end
 

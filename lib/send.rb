@@ -11,7 +11,7 @@ class Send
     # system("cd storage;git remote add origin 'https://github.com/xryuseix/AtCoder_Backup'")
     system("cd storage;git remote set-url origin 'git@github.com:xryuseix/AtCoder_Backup.git'")
     
-    # system("cd storage;echo 'BBBBB\n'")
+    system("cd storage;echo 'git remote -v\n'")
 
     domain = '@gmail.com'
     system("cd storage;git config --global user.email 'ryusei143.shootingstar#{domain}'")

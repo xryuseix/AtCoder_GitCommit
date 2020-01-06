@@ -2,13 +2,15 @@ class Send
   def self.index
     lastday = time
 
-    system("echo 'machine github.com\nlogin #{ENV["Git_ID"]}\npassword #{ENV["Git_PW"]}' > ./.netrc")
+    # system("echo 'machine github.com\nlogin #{ENV["Git_ID"]}\npassword #{ENV["Git_PW"]}' > ./.netrc")
 
     system("cd storage;git init")
     system("cd storage;ls -a")
     # system("cd storage;echo 'AAAAA\n'")
 
-    system("cd storage;git remote add origin 'https://github.com/xryuseix/AtCoder_Backup'")
+    # system("cd storage;git remote add origin 'https://github.com/xryuseix/AtCoder_Backup'")
+    system("cd storage;git remote set-url origin 'git@github.com:xryuseix/AtCoder_Backup.git'")
+    
     # system("cd storage;echo 'BBBBB\n'")
 
     domain = '@gmail.com'

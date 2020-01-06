@@ -27,12 +27,13 @@ class Send
     system("cd storage;git commit -m '#{lastday.year}/#{lastday.month}/#{lastday.day} #{rand(100000)}'")
     # system("cd storage;echo 'FFFFF\n'")
 
-    system("cd storage;git push origin master")
-
+    
     cmd = 'git push origin master'
+    exec_as_root(cmd)
+    system("cd storage;git push origin master")
     # PTY.getpty(cmd) do | i, o |
     #   o.sync = true
-    #   i.expect(/Username for 'https:\/\/github\.com':/) { |line| #入力プロンプトくるまでreadline繰り返す
+    #   i.expect(/Username for 'https:\/\/github\.com': $/) { |line| #入力プロンプトくるまでreadline繰り返す
     #     puts line
     #     o.puts ENV['Git_ID']
     #     o.flush
@@ -41,7 +42,6 @@ class Send
     #     puts i.gets
     #   end
     # end
-    exec_as_root(cmd)
   #   PTY.getpty(cmd) do | i,o |
   #     o.sync = true
   #     i.expect(/Password for 'https://xryuseix@github.com':/,10){|line| ##入力プロンプトくるまでreadline繰り返す

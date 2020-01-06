@@ -17,7 +17,7 @@ def exec_as_root( cmd )
 
   PTY.spawn( cmd ) { |r, w|
     w.sync = true
-    r.expect( /Username for 'https:\/\/github\.com':/ ) {
+    r.expect( /Username for 'https:\/\/github\.com': $/ ) {
       w.puts ENV['Git_ID']
       sleep 2
     }

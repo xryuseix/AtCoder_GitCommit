@@ -28,9 +28,9 @@ class Send
     # system("cd storage;echo 'FFFFF\n'")
 
     
-    cmd = 'git push origin master'
+    # system("cd storage;git push origin master")
+    cmd = 'cd storage;git push origin master'
     exec_as_root(cmd)
-    system("cd storage;git push origin master")
     # PTY.getpty(cmd) do | i, o |
     #   o.sync = true
     #   i.expect(/Username for 'https:\/\/github\.com': $/) { |line| #入力プロンプトくるまでreadline繰り返す

@@ -12,3 +12,14 @@ require 'expect'
 #     puts i.gets
 #   end
 # end
+def exec_as_root( cmd )
+  $expect_verbose = true
+
+  PTY.spawn( cmd ) { |r, w|
+    w.sync = true
+    r.expect( /Username for 'https:\/\/github\.com':/ ) {
+      w.puts ENV['Git_ID']
+      sleep 2
+    }
+  }
+end

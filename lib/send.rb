@@ -10,8 +10,8 @@ class Send
     
     # system("cd storage;echo 'git remote -v\n'")
 
-    # domain = '@gmail.com'
-    # system("cd storage;git config --global user.email 'ryusei143.shootingstar#{domain}'")
+    domain = '@' + 'gmail.com'
+    system("cd storage;git config --global user.email 'ryusei143.shootingstar#{domain}'")
     # system("cd storage;git config --global user.name 'xryuseix'")
 
 

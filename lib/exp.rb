@@ -25,8 +25,5 @@ def exec_as_root( cmd )
       w.puts ENV['Git_PW']
       sleep 2
     }
-    while( r.eof? == false )
-      puts r.gets
-    end
   }
 end

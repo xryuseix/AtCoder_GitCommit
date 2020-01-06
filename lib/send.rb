@@ -12,7 +12,7 @@ class Send
 
     domain = '@' + 'gmail.com'
     system("cd storage;git config --global user.email 'ryusei143.shootingstar#{domain}'")
-    # system("cd storage;git config --global user.name 'xryuseix'")
+    system("cd storage;git config --global user.name 'xryuseix'")
 
 
     system("cd storage;git pull origin master")

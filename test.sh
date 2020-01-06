@@ -1,1 +1,0 @@
-ruby ./lib/Commiter.rb >> ~/Desktop/b.txt

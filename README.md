@@ -11,11 +11,12 @@ AtCoderに提出したコードを自動でGitHubにバックアップをとる�
 ```sh
 $ git clone https://github.com/xryuseix/AtCoder_GitCommit
 ```
+2. lib/send.rbの6~10行目を編集してください
 
 ※以降はherokuで実行する場合，サーバーをお持ちならそちらでも可能です
 
-2. herokuへ登録し，デプロイします
+3. herokuへ登録し，デプロイします
 
-3. herokuの環境変数「Git_ID」にIDを，「Git_PW」にパスワードを保存します．
+4. herokuの環境変数「Git_ID」にIDを，「Git_PW」にパスワードを保存します．
 
-4. herokuのaddonのスケジューラに時刻を設定します
+5. herokuのaddonのスケジューラに時刻を設定します

@@ -12,7 +12,7 @@ class Send
     system("cd storage;git pull origin master")
    
     system("cd storage;git add --all")
-    system("cd storage;git commit -m 'submit of #{lastday.year}/#{lastday.month}/#{lastday.day} rand=#{rand(100000)}'")
+    system("cd storage;git commit -m 'submit of #{lastday.year}/#{lastday.month}/#{lastday.day}'")
     cmd = 'cd storage;git push origin master'
     exec_as_root(cmd)
     

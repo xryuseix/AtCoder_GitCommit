@@ -11,7 +11,7 @@ AtCoderに提出したコードを自動でGitHubにバックアップをとる�
 ```sh
 $ git clone https://github.com/xryuseix/AtCoder_GitCommit
 ```
-2. lib/send.rbの6~10行目を編集してください
+2. lib/send.rbの6~10行目とlib/fetch.rbの54行目を編集してください
 
 ※以降はherokuで実行する場合，サーバーをお持ちならそちらでも可能です
 

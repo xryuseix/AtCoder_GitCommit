@@ -3,7 +3,7 @@ class Send
     lastday = time
 
     system("cd storage;git init")
-    system("cd storage;git remote add origin 'https://github.com/xryuseix/AtCoder_Backup'")
+    system("cd storage;git remote add origin 'https://github.com/xryuseix/AtCoder_Backup.git'")
 
     domain = '@' + 'gmail.com'
     system("cd storage;git config --global user.email 'ryusei143.shootingstar#{domain}'")

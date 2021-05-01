@@ -11,7 +11,8 @@ def exec_as_root( cmd )
       w.puts ENV['Git_ID']
       sleep 2
     }
-    r.expect( /Password for 'https:\/\/xryuseix@github.com': $/ ) {
+    domain = '@' + 'gmail.com'
+    r.expect( /Password for 'https:\/\/xryuseix#{domain}': $/ ) {
       w.puts ENV['Git_PW']
       sleep 2
     }

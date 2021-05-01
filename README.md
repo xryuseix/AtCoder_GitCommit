@@ -1,22 +1,28 @@
-# AtCoder_GitCommit
-readmeは執筆中です
+![Ruby](https://img.shields.io/badge/Ruby-2.6.5-C21253.svg?logo=ruby) ![Heroku](https://img.shields.io/badge/Heroku-430098.svg?logo=heroku)
 
-AtCoderに提出したコードを自動でGitHubにバックアップをとるプログラム
+# AtCoder_GitCommit
+
+AtCoder に提出したコードを自動で GitHub にバックアップをとるプログラム
 このコードによって作成されたレポジトリは[こちら](https://github.com/xryuseix/AtCoder_Backup)です
+
+## 更新時間
+
+2:00 AM (JST) = 5:00 PM (UTC)
 
 ## Usage
 
-1. cloneします
+1. clone します
 
 ```sh
 $ git clone https://github.com/xryuseix/AtCoder_GitCommit
 ```
-2. lib/send.rbの6~10行目とlib/fetch.rbの54行目を編集してください
 
-※以降はherokuで実行する場合，サーバーをお持ちならそちらでも可能です
+2. src/send.rb の 6~10 行目と src/fetch.rb の 54 行目と src/exp.ruby の 14 行目を編集してください
 
-3. herokuへ登録し，デプロイします
+※以降は heroku で実行する場合，サーバーをお持ちならそちらでも可能です
 
-4. herokuの環境変数「Git_ID」にIDを，「Git_PW」にパスワードを保存します．
+3. heroku へ登録し，デプロイします
 
-5. herokuのaddonのスケジューラに時刻を設定します
+4. heroku の環境変数「Git_ID」に ID を，「Git_PW」に GitHub Personal access tokens を保存します．
+
+5. heroku の addon のスケジューラに時刻を設定します
